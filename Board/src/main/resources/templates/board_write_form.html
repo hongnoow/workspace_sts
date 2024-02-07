@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    <form action="boardReg" method="post">
+        <tr>
+            <td>글번호</td>
+            <td><input type="text" name="boardNum"></td>
+        </tr> <br>
+        <tr>
+            <td>제목</td>
+            <td><input type="text" name="boardTitle"></td>
+        </tr> <br>
+        <tr>
+            <td>작성자</td>
+            <td><input type="text" name="writer"></td>
+        </tr> <br>
+        <tr>
+            <td>작성일</td>
+            <td><input type="date" name="createDate"></td>
+        </tr> <br>
+        <tr>
+            <td>내용</td>
+            <textarea name="boardContent"cols="30" rows="10"></textarea>
+        </tr> <br>
+
+        <input type="submit" value="글등록">
+    </form>
+</body>
+</html>

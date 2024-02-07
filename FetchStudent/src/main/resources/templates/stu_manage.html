@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+    <link rel="stylesheet" href="/stu_manage.css">
+</head>
+<body>
+    <table class="container">
+        <colgroup>
+            <col width="50%">
+            <col width="50%">
+        </colgroup>
+        <tr>
+            <td>
+                <!-- <select onchange="goSelect()" id="class-selector"> -->
+                <select onchange="fetchSelect()" id="class-selector">
+                    <option value="0" th:selected="${stuVO.classCode == 0}">전체</option>
+                    <th:block th:each="class : ${classList}">
+                        <option th:value="${class.classCode}" th:selected="${stuVO.classCode == class.classCode}">
+                            [[${class.className}]]
+                        </option>
+                    </th:block>
+                </select>
+                <table id="stu-list-table">
+                    <colgroup>
+                        <col width="10%">
+                        <col width="20%">
+                        <col width="10%">
+                        <col width="*">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <td>NO</td>
+                            <td>반 이름</td>
+                            <td>학번</td>
+                            <td>이름</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr th:each="stu, state : ${stuList}" id="stu-selector">
+                                <td>[[${state.index + 1}]]</td>
+                                <td>[[${stu.className}]]</td>
+                                <td>[[${stu.stuNum}]]</td>
+                                <td><span th:onclick="goScore([[${stu.stuNum}]])" id="name-span">[[${stu.stuName}]]</span></td>
+                            </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <div class="stu-detail-div">
+                  
+                </div>    
+            </td>
+        </tr>
+    </table>
+<script src="/stu_manage.js"></script>
+</body>
+</html>

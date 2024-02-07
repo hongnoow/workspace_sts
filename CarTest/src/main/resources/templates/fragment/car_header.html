@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<style>
+    tr, td{
+        border: 1px solid black;
+    }
+    td{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+</style>
+<th:block th:fragment="headerFragment">
+    <div class="row">
+        <div class="col">
+            <table style="margin: 0 auto;">
+                <tr>
+                    <td>홈</td>
+                    <td>차량 관리</td>
+                    <td>판매 정보 등록</td>
+                    <td>판매 목록</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</th:block>
+
+
+
+</html>

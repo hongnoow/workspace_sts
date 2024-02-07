@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td>글번호</td>
+            <td>[[${boardInfo.boardNum}]]</td>
+            <td>작성자</td>
+            <td>[[${boardInfo.writer}]]</td>
+            <td>작성일</td>
+            <td>[[${boardInfo.createDate}]]</td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td colspan="5">[[${boardInfo.boardTitle}]]</td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td colspan="5">[[${boardInfo.boardContent}]]</td>
+        </tr>
+    </table>
+    <input type="button" value="뒤로가기" onclick="goStart()">
+    <input type="button" value="수정" th:onclick="|location.href='@{goUpdate(boardNum = ${boardInfo.boardNum})}'|">
+    <input type="button" value="삭제" th:onclick="|location.href='@{deleteBoard(boardNum = ${boardInfo.boardNum})}'|">
+    <script>
+        function goStart(){
+            location.href = '/'
+        }
+    </script>
+    <script>
+        function goUpdate(){
+            location.href = 'goUpdate'
+        }
+    </script>
+</body>
+</html>
